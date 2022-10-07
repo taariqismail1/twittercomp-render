@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Twittercomp Results</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Twittercomp</h1>
+        <div style="margin-bottom: 15px;">
+      {% if winners %}
+            <p><span class="tooltiptext" id="myTooltip" style="display:none;"></span></p>
+      <p class="message" id="myInput" style=" background: #E3EFFF;"><button type="button" class ="copy-icon" onclick = "copyText()"></button>{{ winners | safe }}</p>
+             {% endif %}
+         </div>
+             <p  class="normal">Winners are drawn from the last 100 retweets or likes. This is a limitation of the Twitter API.</p>
+        <div>
+        <form action="/">
+    <input type="submit" value="New draw" class = "btn" />
+            </div>
+</form>
+     
+
+         </div>
+       <p> <a href ="https://twitter.com/taariqismail">Taariq Ismail</a></p>
+   
+  </body>
+    
+    <script>
+    
+    
+
+function copyText() {
+  var range, selection, worked;
+
+    element = document.getElementById("myInput")
+    
+  if (document.body.createTextRange) {
+    range = document.body.createTextRange();
+    range.moveToElementText(element);
+    range.select();
+  } else if (window.getSelection) {
+    selection = window.getSelection();        
+    range = document.createRange();
+    range.selectNodeContents(element);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+  
+  try {
+    document.execCommand('copy');
+    selection.removeAllRanges();
+      
+  var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied to clipboard"
+    
+    var tooltiptext = document.getElementById("tooltiptext");
+    tooltip.style.display = "block"
+
+    
+  }
+  catch (err) {
+    alert('unable to copy text');
+  }
+    
+}
+        
+    </script>
+</html>

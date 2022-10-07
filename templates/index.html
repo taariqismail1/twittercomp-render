@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Twitter competitions - free and easy</title>
+  </head>
+  <body>
+      
+      <div class="wrapper">
+       
+      
+    <div class="container">
+       <h1>Twittercomp</h1>
+        <p>Select competition type. Paste tweet. Choose number of winners.</p>
+        
+        
+      <form action="/submit" method="POST">
+        
+                   
+          
+
+<div class="cc-selector" style = "text-align: center;">
+        <input id="visa" type="radio" name="comp" value="retweet" checked = true />
+        <label class="drinkcard-cc visa" for="visa"></label>
+        <input id="mastercard" type="radio" name="comp" value="like" />
+        <label class="drinkcard-cc2 mastercard"for="mastercard"></label>
+    </div>
+          
+        <div class="field form-group">
+            
+  
+
+    <!--      <h3>Tweet URL</h3> -->
+          <input
+            type="text"
+            name="tweet"
+            placeholder="Tweet URL"
+            required     
+            pattern = ".*twitter.com/.*"
+            oninvalid="this.setCustomValidity('Invalid Tweet URL')"
+            oninput="this.setCustomValidity('')"
+            style="width:100%; font-size: 1.2rem; padding: 0.4rem;"      
+          />
+        </div>
+        <div class="field form-group">
+         <!-- <h3>Number of winners</h3> -->
+          <input
+            type="number"
+            name="numberWinners"
+            required
+            min="1"
+            max="100"
+            style="width:100%; font-size: 1.2rem; padding: 0.4rem;"     
+            placeholder="Number of winners"
+          />
+        </div>
+
+                <input type="submit" value="Get lucky winners" class="btn" />
+      </form>
+        
+        
+    </div>
+      
+      <p class = "normal"> Twittercomp is a free and easy way to pick winners for a Twitter competition. No account required. </p>
+      
+    <p> <a href ="https://twitter.com/taariqismail">Taariq Ismail</a></p>
+ </div>
+          </body>
+</html>
